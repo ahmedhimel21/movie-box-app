@@ -8,12 +8,14 @@ export default function MoviesNavbar({ search, setSearch }) {
         <div className="mx-auto flex min-h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <NavLink
             to="/"
-            className="hidden items-center gap-2 text-lg font-black text-white sm:flex"
+            className="group flex items-center gap-2 text-xl font-black tracking-tight text-white"
           >
-            <span className="grid size-9 place-items-center rounded-lg bg-[#e50914]">
-              <Clapperboard className="size-5" />
+            <span className="grid size-10 place-items-center rounded-xl bg-[#e50914] shadow-lg shadow-red-950/40 transition-transform group-hover:scale-105">
+              <Clapperboard className="size-6" />
             </span>
-            Movie<span className="text-[#ff3340]">Box</span>
+            <span>
+              Movie<span className="text-[#ff3340]">Box</span>
+            </span>
           </NavLink>
           <NavLink
             to="/"
