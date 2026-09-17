@@ -327,11 +327,6 @@ GitHub:
 
 https://github.com/ahmedhimel21
 
-## 📄 License
-
-This project is created for educational and portfolio purposes.
-
 ```
 
-This README is written to match your **current MovieBox architecture**, including the `services/movieService.js` layer and Featured section, rather than describing a generic React project.
 ```
