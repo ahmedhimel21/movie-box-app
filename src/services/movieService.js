@@ -1,7 +1,13 @@
 const API_URL = "https://api.tvmaze.com";
 
-export const getFeaturedMovies = async () => {
-  const res = await fetch(`${API_URL}/shows`);
+export const getMovies = async (search = "") => {
+  const query = search.trim();
+
+  const url = query
+    ? `${API_URL}/search/shows?q=${encodeURIComponent(query)}`
+    : `${API_URL}/shows`;
+
+  const res = await fetch(url);
 
   if (!res.ok) {
     throw new Error("Failed to fetch movies");
@@ -9,8 +15,5 @@ export const getFeaturedMovies = async () => {
 
   const data = await res.json();
 
-  return data
-    .filter((movie) => movie?.rating?.average)
-    .sort((a, b) => b.rating.average - a.rating.average)
-    .slice(0, 9);
+  return query ? data.map((item) => item.show) : data;
 };

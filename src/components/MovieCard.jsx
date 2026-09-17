@@ -4,7 +4,7 @@ import Modal from "./Modal";
 export default function MovieCard({ movie }) {
   const {
     name,
-    image: { original },
+    image,
     rating: { average },
     premiered,
   } = movie;
@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
       <article className="group overflow-hidden rounded-2xl border border-white/10 bg-[#111116] shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-2xl hover:shadow-red-950/20">
         <figure className="relative overflow-hidden bg-black">
           <img
-            src={original}
+            src={image?.original}
             alt={`${name} poster`}
             loading="lazy"
             className="h-80 w-full object-cover transition duration-500 group-hover:scale-105"

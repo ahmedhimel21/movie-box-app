@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import MovieCard from "./MovieCard";
-import { getFeaturedMovies } from "../services/movieService";
+import { getFeaturedMovies } from "../services/movieServiceFeatured";
 
 export default function Featured() {
   const [featuredMovies, setFeaturedMovies] = useState([]);
