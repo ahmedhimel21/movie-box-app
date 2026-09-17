@@ -19,7 +19,6 @@ export default function Featured() {
         setLoading(false);
       }
     };
-
     fetchFeaturedMovies();
   }, []);
   return (
@@ -54,7 +53,7 @@ export default function Featured() {
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredMovies?.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard key={movie?.id} movie={movie} />
             ))}
           </div>
         )}

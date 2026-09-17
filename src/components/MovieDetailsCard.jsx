@@ -1,19 +1,12 @@
 import { CalendarDays, Star } from "lucide-react";
 
 export default function MovieDetailsCard({ movie }) {
-  const {
-    name,
-    image: { original } = {},
-    rating: { average } = {},
-    premiered,
-    summary,
-    genres = [],
-  } = movie;
+  const { name, image, rating, premiered, summary, genres = [] } = movie;
 
   return (
     <div className="grid md:grid-cols-[260px_1fr]">
       <img
-        src={original}
+        src={image?.original}
         alt={`${name} poster`}
         className="h-80 w-full object-cover md:h-full"
       />
@@ -24,7 +17,7 @@ export default function MovieDetailsCard({ movie }) {
         <h2 className="mt-2 text-3xl font-black tracking-tight">{name}</h2>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/10 px-3 py-1.5 text-sm font-bold text-amber-300">
-            <Star className="size-4 fill-current" /> {average ?? "N/A"}
+            <Star className="size-4 fill-current" /> {rating?.average ?? "N/A"}
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1.5 text-sm font-semibold text-slate-300">
             <CalendarDays className="size-4" />

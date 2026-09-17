@@ -2,12 +2,7 @@ import { CalendarDays, Star } from "lucide-react";
 import Modal from "./Modal";
 
 export default function MovieCard({ movie }) {
-  const {
-    name,
-    image,
-    rating: { average },
-    premiered,
-  } = movie;
+  const { name, image, rating, premiered } = movie;
   return (
     <>
       <article className="group overflow-hidden rounded-2xl border border-white/10 bg-[#111116] shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-2xl hover:shadow-red-950/20">
@@ -31,7 +26,7 @@ export default function MovieCard({ movie }) {
           <div className="mt-4 flex items-center justify-between gap-3">
             <p className="flex items-center gap-1.5 text-sm font-bold text-amber-300">
               <Star className="size-4 fill-current" />
-              {average ?? "N/A"}
+              {rating?.average ?? "N/A"}
             </p>
             <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
               <CalendarDays className="size-4" />
